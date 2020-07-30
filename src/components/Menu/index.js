@@ -2,7 +2,12 @@ import React from 'react';
 import './Menu.css';
 
 import Logo from '../../assets/pauloflix.png';
-import ButtonLink from '../ButtonLink'
+
+// Componenete do botão criado com css puro
+//import ButtonLink from '../ButtonLink'
+
+// Componente do botão criado com styled-components
+import Button from '../Button';
 
 function Menu() {
   return (
@@ -11,9 +16,9 @@ function Menu() {
         <img className="Logo" src={Logo} alt="Pauloflix logo"/>
       </a>
 
-      <ButtonLink href="/" className="ButtonLink">
+      <Button as="a" href="/" className="ButtonLink">
         Novo vídeo
-      </ButtonLink>
+      </Button>
     </nav>
   )
 }
