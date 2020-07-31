@@ -9,14 +9,16 @@ import Logo from '../../assets/pauloflix.png';
 // Componente do botão criado com styled-components
 import Button from '../Button';
 
+import { Link } from 'react-router-dom';
+
 function Menu() {
   return (
     <nav className="Menu">
-      <a href="/">
+      <Link to="/">
         <img className="Logo" src={Logo} alt="Pauloflix logo"/>
-      </a>
+      </Link>
 
-      <Button as="a" href="/" className="ButtonLink">
+      <Button as={Link} to="/cadastro/video" className="ButtonLink">
         Novo vídeo
       </Button>
     </nav>
