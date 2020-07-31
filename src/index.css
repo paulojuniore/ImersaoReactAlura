@@ -14,6 +14,11 @@
   --backEnd: #00C86F;
 }
 
+body {
+  --bodyPaddingTop: 94px;
+  padding-top: var(--bodyPaddingTop);
+}
+
 html,
 body {
   margin: 0;
@@ -23,3 +28,9 @@ body {
 a {
   color: inherit;
 } 
+
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
