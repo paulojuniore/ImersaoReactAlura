@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
@@ -11,7 +11,7 @@ function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
     descricao: '',
-    cor: '',
+    cor: '#000000',
   };
 
   const [values, setValues] = useState(valoresIniciais);
@@ -39,6 +39,17 @@ function CadastroCategoria() {
       e.target.value,
     );
   };
+
+  useEffect(() => {
+    const url = 'http://localhost:8080/categorias';
+    fetch(url)
+      .then(async (response) => {
+        const dados = await response.json();
+        setCategorias([
+          ...dados,
+        ]);
+      });
+  }, []);
 
   return (
     <PageDefault>

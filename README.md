@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Useful Commands
 npx eslint --init
 npm install --save prop-types
+npm install json-server
+npm install --save-dev concurrently
 
 ## Available Scripts
 
