@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -32,10 +33,9 @@ function CadastroCategoria() {
   };
 
   const handleChange = (e) => {
-    const { getAttribute, value } = e.target;
     setValue(
-      getAttribute('name'),
-      value,
+      e.target.getAttribute('name'),
+      e.target.value,
     );
   };
 
@@ -44,17 +44,13 @@ function CadastroCategoria() {
       <h1>Cadastro de categoria</h1>
 
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Nome da categoria:
-            <input
-              type="text"
-              name="nome"
-              value={values.nome}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <FormField
+          label="Nome da categoria:"
+          type="text"
+          name="nome"
+          value={values.nome}
+          onChange={handleChange}
+        />
 
         <div>
           <label>
@@ -68,17 +64,13 @@ function CadastroCategoria() {
           </label>
         </div>
 
-        <div>
-          <label>
-            Cor:
-            <input
-              type="color"
-              name="cor"
-              value={values.cor}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <FormField
+          label="Cor:"
+          type="color"
+          name="cor"
+          value={values.cor}
+          onChange={handleChange}
+        />
 
         <button type="submit">
           Cadastrar
